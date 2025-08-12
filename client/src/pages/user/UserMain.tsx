@@ -1,3 +1,9 @@
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import AnimatedPage from "../../components/layout/AnimatedPage";
+import OnboardingPage from "./OnboardingPage";
+import { AnimatePresence } from "framer-motion";
+import { useRef } from "react";
+
 const UserMain = () => {
   const location = useLocation();
   const hasInitializedRef = useRef(false);
