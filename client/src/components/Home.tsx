@@ -420,7 +420,9 @@ function Home({ handleNextPage }: HomeProps) {
             backgroundImage: `url(${GuessNowBG})`,
             backgroundSize: "100% 100%",
             minHeight: "131px",
+            cursor:"pointer"
           }}
+          onClick = { handleNextPage }
         >
           <Box
             sx={{
@@ -459,7 +461,6 @@ function Home({ handleNextPage }: HomeProps) {
                   rotate: "270deg",
                   marginTop: "5px",
                 }}
-                onClick={handleNextPage}
               />
             </Button>
           </Box>
