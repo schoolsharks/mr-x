@@ -54,7 +54,7 @@ function GuessThePerson1({
       setIsTimeUp(true);
       // Mark candidate as timed out in storage
       timeoutCandidate(candidateIndex);
-    }, 900000); // 90 seconds
+    }, 90000); // 90 seconds
 
     return () => clearTimeout(timer);
   }, [showCandidateImage, isTimeUp, candidateIndex]);

@@ -1,6 +1,6 @@
 import React from "react";
-import {  Box,  Typography } from "@mui/material";
-import SpeakerCardBG from "../../assets/SpeakerCardBG.webp";
+import { Box, Stack, Typography } from "@mui/material";
+// import SpeakerCardBG from "../../assets/SpeakerCardBG.webp";
 import { Candidate } from "../../Data/SpeakerData";
 
 interface SpeakerCardProps {
@@ -17,10 +17,11 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
   return (
     <Box
       sx={{
-        backgroundImage: `url(${SpeakerCardBG})`,
+        // backgroundImage: `url(${SpeakerCardBG})`,
         backgroundSize: "100% 100%",
-        minHeight: "152px",
-        transform: flipped ? "scaleX(-1)" : "none",
+        bgcolor: "white",
+        // minHeight: "152px",
+        // transform: flipped ? "scaleX(-1)" : "none",
       }}
     >
       <Box
@@ -31,7 +32,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
           //   paddingBottom: 3,
           paddingLeft: 3,
           paddingRight: 3,
-          transform: flipped ? "scaleX(-1)" : "none",
+          // transform: flipped ? "scaleX(-1)" : "none",
         }}
       >
         {/* Left side - Speaker Image */}
@@ -40,6 +41,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
             flexShrink: 0,
             mr: flipped ? 0 : 3,
             ml: flipped ? 3 : 0,
+            mb: -1,
           }}
         >
           <Box
@@ -56,6 +58,10 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
           />
         </Box>
 
+        <Stack height={"152px"} width={"2px"} mx={1} sx={{background:
+          "linear-gradient(to right, transparent, #dddddd)"
+        }} />
+
         {/* Right side - Text content */}
         <Box sx={{ flex: 1, color: "white" }}>
           {/* Top text */}
@@ -66,7 +72,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
               fontFamily: "Inter",
               fontWeight: 500,
               opacity: 0.6,
-              mt: -4,
+              // mt: -4,
               color: "#000000",
             }}
           >
@@ -97,8 +103,8 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
               variant="body2"
               sx={{
                 fontSize: "14px",
-                lineHeight:"16px",
-                fontWeight:500,
+                lineHeight: "16px",
+                fontWeight: 500,
                 fontFamily: "Inter, sans-serif",
                 mt: 2,
                 color: "#000000",
