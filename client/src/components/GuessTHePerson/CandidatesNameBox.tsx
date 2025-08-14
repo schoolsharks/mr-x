@@ -39,8 +39,8 @@ const CandidatesNameBox: React.FC<CandidatesNameBoxProps> = ({
         sx={{
           position: "relative",
           backgroundImage: `url(${CandidateBluredBox})`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100%",
+          // backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           width: "327px",
           height: "51px",
@@ -58,7 +58,7 @@ const CandidatesNameBox: React.FC<CandidatesNameBoxProps> = ({
             alignItems: "left",
             justifyContent: "left",
             px: 4,
-            py: 0.7,
+            py: 0.8,
           }}
         >
           <Typography

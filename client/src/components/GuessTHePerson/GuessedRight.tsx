@@ -2,12 +2,12 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
-import CandidatesNameBox from "./CandidatesNameBox";
 import { Candidate, CandidateCandidatesData } from "../../Data/CandidatesData";
 import GuessedRightBG from "../../assets/GussedRightBG.webp";
 import FirstWingConnect from "../../assets/FirstWingConnect.webp";
 import ArrowWhite from "../../assets/ArrowWhite.png";
 import { completeGame } from "../../utils/gameStorage";
+import ScrollToTop from "../utility/ScrollToTop";
 
 interface GuessedRightProps {
   candidate: Candidate;
@@ -20,7 +20,7 @@ const GuessedRight: React.FC<GuessedRightProps> = ({
   candidate,
   handleNextPage,
   currentCandidateIndex = 0,
-//   strikes = 0,
+  //   strikes = 0,
 }) => {
   const navigate = useNavigate();
   const candidateHints = candidate.hints;
@@ -42,6 +42,7 @@ const GuessedRight: React.FC<GuessedRightProps> = ({
 
   return (
     <>
+      <ScrollToTop behavior="smooth" />
       <Box
         sx={{
           backgroundImage: `url(${GuessedRightBG})`,
@@ -90,11 +91,11 @@ const GuessedRight: React.FC<GuessedRightProps> = ({
               sx={{
                 position: "relative",
                 width: "100%",
-                height: "360px",
+                height: "377px",
                 backgroundImage: `url(${candidate.Img})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                marginBottom: "20px",
+                // marginBottom: "20px",
               }}
             />
           )}
@@ -105,23 +106,50 @@ const GuessedRight: React.FC<GuessedRightProps> = ({
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              gap: "5px",
+              gap: "10px",
               marginTop: "0px",
             }}
           >
-            {/* Show hint data in candidate name box style */}
+            {/* Show hint data in custom styled boxes */}
             {candidateHints.map((hint, index) => (
               <Box
                 key={index}
                 sx={{
+                  width: "327px",
+                  height: "51px",
+                  opacity: 1,
+                  background: "#FFFFFF85",
+                  boxShadow: "0px 4px 4px 0px #00000040",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   position: "relative",
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: "#981922",
+                    opacity: 0.1,
+                    // borderRadius: "8px",
+                  },
                 }}
               >
-                <CandidatesNameBox
-                  candidateName={hint}
-                  alignment={index % 2 === 0 ? "left" : "right"}
-                  isHint={true}
-                />
+                <Typography
+                  sx={{
+                    fontSize: "16px",
+                    fontWeight: 500,
+                    color: "#000000",
+                    fontFamily: "Inter",
+                    textAlign: "center",
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                >
+                  {hint}
+                </Typography>
               </Box>
             ))}
           </Box>
@@ -198,11 +226,12 @@ const GuessedRight: React.FC<GuessedRightProps> = ({
 
           {/* Next Speaker / Register Now Button */}
           <Box
+            onClick={handleButtonClick}
             sx={{
-              //   backgroundImage: `url(${GuessedRightBG})`,
-              //   backgroundSize: "100% 100%",
-              //   minHeight: "131px",
-              mt: "40px",
+              // backgroundImage: `url(${GuessedRightBG})`,
+              // backgroundSize: "100% 100%",
+              // minHeight: "131px",
+              mt: "60px",
             }}
           >
             <Box

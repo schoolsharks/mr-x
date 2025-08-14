@@ -2,6 +2,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import AnimatedPage from "../../components/layout/AnimatedPage";
 import OnboardingPage from "./OnboardingPage";
 import RegistrationPage from "./RegistrationPage";
+import ScrollToTop from "../../components/utility/ScrollToTop";
 import { AnimatePresence } from "framer-motion";
 
 const UserMain = () => {
@@ -9,6 +10,7 @@ const UserMain = () => {
 
   return (
     <div style={{ position: "relative", width: "100%", minHeight: "100vh" }}>
+      <ScrollToTop />
       <AnimatePresence mode="wait" initial={false}>
         <Routes location={location} key={location.pathname}>
           <Route

@@ -223,13 +223,24 @@ const Registration2: React.FC = () => {
               style={{ height: "77px" }}
             />
           </Box>
-
-          <Box sx={{ display: "flex", justifyContent: "center", mt: 40 }}>
-            <img
+        </Box>
+        <Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              mt: 40,
+              backgroundSize: "100% 100%",
+              height: "664px",
+              width: "100%",
+              backgroundImage: `url(${MeetTheSpeakerLowerSection})`,
+            }}
+          >
+            {/* <img
               src={MeetTheSpeakerLowerSection}
               alt="Meet The Speaker Lower Section"
-              style={{ height: "664px" }}
-            />
+              // style={{  }}
+            /> */}
           </Box>
         </Box>
       </Box>

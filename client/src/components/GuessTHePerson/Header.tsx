@@ -116,7 +116,7 @@ const Header: React.FC<HeaderProps> = ({
             height: "15px",
             backgroundColor: "#981922",
             transform: `translateX(${timerTransform}%)`,
-            transition: "transform 10s linear", // 10 second smooth animation
+            transition: "transform 90s linear", // 10 second smooth animation
           }}
         />
       )}

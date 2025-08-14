@@ -189,12 +189,12 @@ const Registration1: React.FC = () => {
                   return selected;
                 }}
               >
-                <MenuItem value="technology">Technology</MenuItem>
-                <MenuItem value="healthcare">Healthcare</MenuItem>
-                <MenuItem value="finance">Finance</MenuItem>
-                <MenuItem value="ecommerce">E-commerce</MenuItem>
-                <MenuItem value="education">Education</MenuItem>
-                <MenuItem value="other">Other</MenuItem>
+                <MenuItem value="Technology">Technology</MenuItem>
+                <MenuItem value="Healthcare">Healthcare</MenuItem>
+                <MenuItem value="Finance">Finance</MenuItem>
+                <MenuItem value="E-commerce">E-commerce</MenuItem>
+                <MenuItem value="Education">Education</MenuItem>
+                <MenuItem value="Other">Other</MenuItem>
               </Select>
             </FormControl>
           </Box>
@@ -261,12 +261,12 @@ const Registration1: React.FC = () => {
                   return selected;
                 }}
               >
-                <MenuItem value="pre-seed">Pre-Seed</MenuItem>
-                <MenuItem value="seed">Seed</MenuItem>
-                <MenuItem value="series-a">Series A</MenuItem>
-                <MenuItem value="series-b">Series B</MenuItem>
-                <MenuItem value="series-c">Series C</MenuItem>
-                <MenuItem value="other">Other</MenuItem>
+                <MenuItem value="Pre-seed">Pre-Seed</MenuItem>
+                <MenuItem value="Seed">Seed</MenuItem>
+                <MenuItem value="Series A">Series A</MenuItem>
+                <MenuItem value="Series B">Series B</MenuItem>
+                <MenuItem value="Series C">Series C</MenuItem>
+                <MenuItem value="Other">Other</MenuItem>
               </Select>
             </FormControl>
           </Box>

@@ -54,7 +54,7 @@ function GuessThePerson1({
       setIsTimeUp(true);
       // Mark candidate as timed out in storage
       timeoutCandidate(candidateIndex);
-    }, 10000); // 10 seconds
+    }, 900000); // 90 seconds
 
     return () => clearTimeout(timer);
   }, [showCandidateImage, isTimeUp, candidateIndex]);
@@ -145,12 +145,12 @@ function GuessThePerson1({
             <Box
               sx={{
                 position: "relative",
-                width: "100%",
+                // width: "100%",
                 height: "360px",
                 backgroundImage: `url(${currentCandidate.BlurImg})`,
-                backgroundSize: "cover",
+                backgroundSize: "100% 100%",
                 backgroundPosition: "center",
-                marginBottom: "20px",
+                // marginBottom: "20px",
               }}
             >
               {/* Question Boxes Overlay */}
@@ -162,7 +162,7 @@ function GuessThePerson1({
                   flexDirection: "column",
                   justifyContent: "space-evenly",
                   alignItems: "flex-start",
-                  padding: "40px 20px",
+                  padding: "40px 0px",
                 }}
               >
                 {/* First Box - Left aligned */}
@@ -189,8 +189,8 @@ function GuessThePerson1({
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              gap: "15px",
-              marginTop: "20px",
+              gap: "10px",
+              // marginTop: "20px",
             }}
           >
             {/* Display candidate names when game is active */}
