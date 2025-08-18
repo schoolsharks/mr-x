@@ -48,7 +48,7 @@ const GuessedRight: React.FC<GuessedRightProps> = ({
         sx={{
           backgroundImage: `url(${GuessedRight2})`,
           backgroundSize: "100% 100%",
-          minHeight: "1321px",
+          minHeight: "1302px",
         }}
       >
         <Box
@@ -147,9 +147,9 @@ const GuessedRight: React.FC<GuessedRightProps> = ({
                   width: "327px",
                   height: "51px",
                   opacity: 1,
-                  background: "#FFFFFF85",
                   boxShadow: "0px 4px 4px 0px #00000040",
                   display: "flex",
+                  background: "#FFFFFF85",
                   backdropFilter: "blur(10px)",
                   alignItems: "center",
                   justifyContent: "center",

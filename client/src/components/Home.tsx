@@ -249,7 +249,7 @@ function Home({ handleNextPage }: HomeProps) {
               fontSize: "30px",
               fontWeight: "semi-bold",
               color: "#000000",
-              fontFamily: "inter, sans-serif",
+              fontFamily: "Inter, sans-serif",
               lineHeight: "40px",
               letterSpacing: "0%",
               verticalAlign: "middle",
@@ -290,7 +290,7 @@ function Home({ handleNextPage }: HomeProps) {
               fontSize: "85px",
               fontWeight: 500,
               color: "#ffffff",
-              fontFamily: "inter, sans-serif",
+              fontFamily: "Inter, sans-serif",
               lineHeight: "32px",
               letterSpacing: "0%",
               verticalAlign: "middle",
@@ -321,7 +321,7 @@ function Home({ handleNextPage }: HomeProps) {
               display: "flex",
               alignItems: "left",
               justifyContent: "left",
-              mt: "10px",
+              mt: "20px",
             }}
           >
             <img

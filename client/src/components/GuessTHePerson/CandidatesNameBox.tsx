@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import CandidateBluredBox from "../../assets/CandidateBluredBox.webp";
+// import CandidateBluredBox from "../../assets/CandidateBluredBox.webp";
 
 interface CandidatesNameBoxProps {
   candidateName: string;
@@ -38,7 +38,11 @@ const CandidatesNameBox: React.FC<CandidatesNameBoxProps> = ({
       <Box
         sx={{
           position: "relative",
-          backgroundImage: `url(${CandidateBluredBox})`,
+          // backgroundImage: `url(${CandidateBluredBox})`,
+          background: "#FFFFFF85",
+          backdropFilter: "blur(10px)",
+          boxShadow: "0px 4px 4px 0px #00000040",
+
           backgroundSize: "100% 100%",
           // backgroundRepeat: "no-repeat",
           backgroundPosition: "center",

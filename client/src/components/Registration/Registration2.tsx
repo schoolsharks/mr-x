@@ -265,14 +265,14 @@ const Registration2: React.FC = () => {
               <Typography
                 sx={{
                   fontFamily: "Inter",
-                  fontWeight: 700,
+                  fontWeight: 500,
                   fontSize: "20px",
                   lineHeight: "100%",
                   textAlign: "left",
                   letterSpacing: 0,
                   maxWidth: "80%",
                   verticalAlign: "middle",
-                  color: "#000000",
+                  color: "#ffffff",
                   mt: -9,
                   ml: 3.5,
                 }}
@@ -293,14 +293,14 @@ const Registration2: React.FC = () => {
               <Typography
                 sx={{
                   fontFamily: "Inter",
-                  fontWeight: 700,
+                  fontWeight: 500,
                   fontSize: "20px",
                   lineHeight: "100%",
                   textAlign: "left",
                   letterSpacing: 0,
                   maxWidth: "80%",
                   verticalAlign: "middle",
-                  color: "#000000",
+                  color: "#ffffff",
                   mt: -8,
                   ml: 8.5,
                 }}
