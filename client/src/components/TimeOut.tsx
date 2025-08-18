@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
-import Timeout from "../assets/TimeOut.png";
+import Timeout from "../assets/TimeOut1.webp";
 import Arrow from "../assets/Arrow.webp"; // Assuming you have an arrow image for the button
-
+import TimeOutButton from "../assets/TimeOutButton.webp"; // Assuming you have a button image
 interface TimeOutProps {
   handleNextPage: () => void;
 }
@@ -11,15 +11,23 @@ function TimeOut({ handleNextPage }: TimeOutProps) {
     <>
       <Box
         sx={{
-          backgroundImage: `url(${Timeout})`,
-          backgroundSize: "100% 100%",
-          minHeight: "844px",
+          // backgroundImage: `url(${Timeout})`,
+          // backgroundSize: "100% 100%",
+          // backgroundSize: "contain",
+          // backgroundRepeat: "no-repeat",
+          // minHeight: "844px",
         }}
-      ></Box>
+      >
+        <img src={Timeout} alt="Timeout" style={{ width: "100%", height: "auto" }} />
+      </Box>
 
-      
-
-      <Box>
+      <Box
+        sx={{
+          backgroundImage: `url(${TimeOutButton})`,
+          backgroundSize: "100% 100%",
+          minHeight: "130px"
+      }}>
+        {/* <img src={TimeOutButton} alt="Timeout" style={{ width: "100%", height: "auto" }} /> */}
         <Box
           sx={{
             display: "flex",
@@ -29,7 +37,7 @@ function TimeOut({ handleNextPage }: TimeOutProps) {
             textAlign: "left",
             // padding: "40px 0px 0px 24px",
             //   gap: "50px",
-            mt: "-85px",
+            // mt: "-105px",
           }}
         >
           <Typography
@@ -41,7 +49,7 @@ function TimeOut({ handleNextPage }: TimeOutProps) {
               lineHeight: "40px",
               letterSpacing: "0%",
               verticalAlign: "middle",
-              mt: "5px",
+              mt: "45px",
               ml: "24px",
             }}
           >
@@ -56,7 +64,7 @@ function TimeOut({ handleNextPage }: TimeOutProps) {
                 width: "70px",
                 height: "70px",
                 rotate: "270deg",
-                marginTop: "-15px",
+                marginTop: "25px",
               }}
             />
           </Button>

@@ -12,16 +12,16 @@ const BluredQuestionBox: React.FC<BluredQuestionBoxProps> = ({
   hint,
   boxIndex,
 }) => {
-  const [isHintVisible, setIsHintVisible] = useState(boxIndex === 0); // First box shows hint initially
+  const [isHintVisible, setIsHintVisible] = useState(false); // All hints start hidden
 
-  const handleBulbClick = () => {
+  const handleBoxClick = () => {
     setIsHintVisible(true);
   };
 
   // Determine alignment and flip based on box index
   const isLeftAligned = boxIndex === 0 || boxIndex === 2; // First and third box left aligned
   const isFlipped = boxIndex === 1; // Second box is flipped
-  const showBulbIcon = boxIndex !== 0 && boxIndex !== -1; // First box and forced reveal boxes don't show bulb icon
+  const showBulbIcon = boxIndex !== -1; // Only forced reveal boxes don't show bulb icon
   const forceShowHint = boxIndex === -1; // Force show hint when boxIndex is -1
 
   return (
@@ -38,6 +38,7 @@ const BluredQuestionBox: React.FC<BluredQuestionBoxProps> = ({
     >
       {/* Question Box Container */}
       <Box
+        onClick={!isHintVisible && !forceShowHint ? handleBoxClick : undefined}
         sx={{
           position: "relative",
           transform: isFlipped ? "scaleX(-1)" : "none",
@@ -50,6 +51,15 @@ const BluredQuestionBox: React.FC<BluredQuestionBoxProps> = ({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          cursor: !isHintVisible && !forceShowHint ? "pointer" : "default",
+          userSelect: "none",
+          WebkitTapHighlightColor: "transparent",
+          "&:active": {
+            transform: isFlipped ? "scaleX(-1)" : "none",
+          },
+          "&:focus": {
+            outline: "none",
+          },
         }}
       >
         {/* Hint Text */}
@@ -70,7 +80,7 @@ const BluredQuestionBox: React.FC<BluredQuestionBoxProps> = ({
             sx={{
               color: "#000000",
               fontWeight: 500,
-              mb:"7px ",
+              mb: "7px ",
               textAlign: "left",
               // textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
               // maxWidth: "200px",
@@ -88,7 +98,6 @@ const BluredQuestionBox: React.FC<BluredQuestionBoxProps> = ({
         {/* Bulb Icon */}
         {showBulbIcon && !isHintVisible && !forceShowHint && (
           <IconButton
-            onClick={handleBulbClick}
             sx={{
               position: "absolute",
               // For flipped box (boxIndex 1): use right positioning so it appears on left after flip
@@ -98,13 +107,8 @@ const BluredQuestionBox: React.FC<BluredQuestionBoxProps> = ({
               top: "50%",
               transform: `translateY(-50%) ${isFlipped ? "scaleX(-1)" : ""}`,
               zIndex: 10,
-              "&:hover": {
-                transform: `translateY(-50%) scale(1.1) ${
-                  isFlipped ? "scaleX(-1)" : ""
-                }`,
-              },
-              transition: "transform 0.2s ease-in-out",
               padding: 1,
+              pointerEvents: "none", // Disable pointer events so box click works
             }}
           >
             <Box
@@ -114,7 +118,6 @@ const BluredQuestionBox: React.FC<BluredQuestionBoxProps> = ({
               sx={{
                 width: 32,
                 height: 32,
-                cursor: "pointer",
               }}
             />
           </IconButton>

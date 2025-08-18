@@ -148,8 +148,10 @@ function GuessThePerson1({
                 // width: "100%",
                 height: "360px",
                 backgroundImage: `url(${currentCandidate.BlurImg})`,
-                backgroundSize: "100% 100%",
+                // backgroundSize: "100% 100%",
                 backgroundPosition: "center",
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
                 // marginBottom: "20px",
               }}
             >

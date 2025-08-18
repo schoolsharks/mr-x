@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({
   }, []);
 
   return (
-    <>
+    <Box sx={{ overflow: "hidden" }}>
       <Box
         sx={{
           display: "flex",
@@ -120,7 +120,7 @@ const Header: React.FC<HeaderProps> = ({
           }}
         />
       )}
-    </>
+    </Box>
   );
 };
 

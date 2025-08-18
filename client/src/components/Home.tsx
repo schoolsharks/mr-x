@@ -1,16 +1,17 @@
-import FirstWingLogo from "../assets/FirstWingLogo.webp";
-import IDFCLogo from "../assets/IDFCLogo.webp";
+// import FirstWingLogo from "../assets/FirstWingLogo.webp";
+// import IDFCLogo from "../assets/IDFCLogo.webp";
 import Arrow from "../assets/Arrow.webp";
 import ArrowWhite from "../assets/ArrowWhite.png";
 import FirstWingConnect from "../assets/FirstWingConnect.webp";
 import { Box, Button, Typography } from "@mui/material";
 // import {  MetricData } from "./utility/MetricCard";
 import { scrollDown } from "./utility/ScrollDown";
-import TopSectionBG from "../assets/TopSectionBG.webp";
+// import TopSectionBG from "../assets/TopSectionBG.webp";
 import NailItBg from "../assets/NailItBg.webp";
 import LowerSectionBg from "../assets/LowerSectionBg.webp";
 import GuessNowBG from "../assets/GuessNowBG.webp";
 import HomeCards from "../assets/HomeCards.png";
+import HomeHeader from "../assets/HomeHeader.webp";
 
 // const dashboardMetrics: MetricData[] = [
 //   { id: "1", value: "70K+", label: "YouTube Views" },
@@ -29,14 +30,19 @@ function Home({ handleNextPage }: HomeProps) {
     <>
       <Box
         sx={{
-          backgroundImage: `url(${TopSectionBG})`,
-          backgroundSize: "100% 100%",
-          minHeight: "620px",
+          // backgroundImage: `url(${HomeHeader})`,
+          // backgroundSize: "100% 100%",
+          // minHeight: "620px",  
         }}
       >
-        <Box>
+        <img
+          src={HomeHeader}
+          alt="Home Cards"
+          style={{ width: "100%", height: "auto" }}
+        />
+        {/* <Box> */}
           {/* top logos */}
-          <div
+          {/* <div
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -50,10 +56,10 @@ function Home({ handleNextPage }: HomeProps) {
               style={{ height: "48px" }}
             />
             <img src={IDFCLogo} alt="Right Logo" style={{ height: "48px" }} />
-          </div>
+          </div> */}
 
           {/* GuessThe text*/}
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -100,10 +106,10 @@ function Home({ handleNextPage }: HomeProps) {
                 the
               </span>
             </Typography>
-          </Box>
+          </Box> */}
           {/* nextwinglogo  */}
 
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -120,8 +126,8 @@ function Home({ handleNextPage }: HomeProps) {
               alt="First Wing Connect Logo"
               style={{ height: "94px" }}
             />
-          </Box>
-        </Box>
+          </Box> */}
+        {/* </Box> */}
       </Box>
 
       {/* nail it text  */}
@@ -165,7 +171,7 @@ function Home({ handleNextPage }: HomeProps) {
             letterSpacing: "0%",
             verticalAlign: "middle",
             marginTop: "18px",
-            maxWidth: "220px",
+            maxWidth: "60%",
           }}
         >
           The quickest 10 will make the cut for a 1-on-1 with the investor.

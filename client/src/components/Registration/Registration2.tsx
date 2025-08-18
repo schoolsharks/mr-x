@@ -8,7 +8,9 @@ import Strikes from "../../assets/Strikes.png"; // Assuming you have an image fo
 import { scrollDown } from "../utility/ScrollDown";
 import Arrow from "../../assets/Arrow.webp"; // Assuming you have an arrow image for the button
 import FirstWingConnect from "../../assets/FirstWingConnect.webp";
-import MeetTheSpeakerLowerSection from "../../assets/MeetTheSpeakerLowerSection.png"; // Assuming you have a lower section image
+import QuestionBluredBox from "../../assets/QuestionBluredBox.png";
+import LastImg1 from "../../assets/image 60.webp";
+import LastImg2 from "../../assets/image 61.webp";
 
 const Registration2: React.FC = () => {
   return (
@@ -71,7 +73,7 @@ const Registration2: React.FC = () => {
             alignItems: "left",
             justifyContent: "left",
             p: 4,
-            mt: "60px",
+            mt: "100px",
           }}
         >
           <Typography
@@ -229,18 +231,165 @@ const Registration2: React.FC = () => {
             sx={{
               display: "flex",
               justifyContent: "center",
-              mt: 40,
-              backgroundSize: "100% 100%",
-              height: "664px",
+              mt: 37,
               width: "100%",
-              backgroundImage: `url(${MeetTheSpeakerLowerSection})`,
             }}
           >
-            {/* <img
-              src={MeetTheSpeakerLowerSection}
-              alt="Meet The Speaker Lower Section"
-              // style={{  }}
-            /> */}
+            <Typography
+              sx={{
+                fontSize: "25px",
+                fontWeight: 500,
+                color: "#fffffff",
+                fontFamily: "Inter",
+                textAlign: "left",
+                lineHeight: "30px",
+                p: "24px",
+              }}
+            >
+              Note:
+              <br />
+              The quickest 10 will make the cut for a 1-on-1 with the investor.
+            </Typography>
+          </Box>
+          <Box>
+            <Box>
+              <img
+                src={QuestionBluredBox}
+                alt="Question Blured Box"
+                style={{
+                  width: "100%",
+                  height: "83px",
+                  transform: "scaleX(-1)",
+                }}
+              />
+              <Typography
+                sx={{
+                  fontFamily: "Inter",
+                  fontWeight: 700,
+                  fontSize: "20px",
+                  lineHeight: "100%",
+                  textAlign: "left",
+                  letterSpacing: 0,
+                  maxWidth: "80%",
+                  verticalAlign: "middle",
+                  color: "#000000",
+                  mt: -9,
+                  ml: 3.5,
+                }}
+              >
+                Hang tight — you’ll hear from us soon!
+              </Typography>
+            </Box>
+            <Box sx={{ mt: 10 }}>
+              <img
+                src={QuestionBluredBox}
+                alt="Question Blured Box"
+                style={{
+                  width: "100%",
+                  height: "83px",
+                  transform: "scaleX(-1)",
+                }}
+              />
+              <Typography
+                sx={{
+                  fontFamily: "Inter",
+                  fontWeight: 700,
+                  fontSize: "20px",
+                  lineHeight: "100%",
+                  textAlign: "left",
+                  letterSpacing: 0,
+                  maxWidth: "80%",
+                  verticalAlign: "middle",
+                  color: "#000000",
+                  mt: -8,
+                  ml: 8.5,
+                }}
+              >
+                Major Incoming Moments
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                backgroundColor: "#ffffff",
+                mt: 4.3,
+                height: "140px",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "row",
+              }}
+            >
+              <img
+                src={LastImg1}
+                alt="Last Image 1"
+                style={{
+                  width: "106px",
+                  height: "109px",
+                  objectFit: "cover",
+                  margin: "0 12px",
+                }}
+              />
+              <Typography
+                sx={{
+                  fontFamily: "Inter",
+                  fontWeight: 500,
+                  fontSize: "20px",
+                  lineHeight: "100%",
+                  textAlign: "left",
+                  letterSpacing: 0,
+                  maxWidth: "80%",
+                  verticalAlign: "middle",
+                  color: "#000000",
+                }}
+              >
+                An <strong>industry-first</strong> surprise reveal, that could
+                change the way you scale.
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                backgroundColor: "#ffffff",
+                mt: 1.3,
+                height: "140px",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "row",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "Inter",
+                  fontWeight: 500,
+                  fontSize: "20px",
+                  lineHeight: "100%",
+                  textAlign: "left",
+                  letterSpacing: 0,
+                  maxWidth: "80%",
+                  verticalAlign: "middle",
+                  color: "#000000",
+                  ml: "12px",
+                }}
+              >
+                <strong>‘Raise Capital Without Dilution’</strong> Join Recur Club’s spotlight
+                session on exclusive non-dilutive funding for startups.
+              </Typography>
+
+              <img
+                src={LastImg2}
+                alt="Last Image 2"
+                style={{
+                  width: "106px",
+                  height: "109px",
+                  objectFit: "cover",
+                  margin: "0 12px",
+                }}
+              />
+            </Box>
           </Box>
         </Box>
       </Box>
