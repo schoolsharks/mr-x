@@ -324,7 +324,7 @@ const Registration1: React.FC = () => {
                           fontFamily: "Inter",
                           fontWeight: 400,
                           fontSize: "16px",
-                          lineHeight: "100%",
+                          lineHeight: "120%",
                           color: "#000000",
                         }}
                       >

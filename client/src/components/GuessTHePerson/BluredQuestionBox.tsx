@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Box, Typography, IconButton } from "@mui/material";
-import QuestionBluredBox from "../../assets/QuestionBluredBox.png";
 import BlubIcon from "../../assets/BlubIcon.png";
 
 interface BluredQuestionBoxProps {
@@ -42,8 +41,11 @@ const BluredQuestionBox: React.FC<BluredQuestionBoxProps> = ({
         sx={{
           position: "relative",
           transform: isFlipped ? "scaleX(-1)" : "none",
-          backgroundImage: `url(${QuestionBluredBox})`,
+          backgroundColor:"#d9d9d940",
+          backdropFilter: "blur(8px)",
           backgroundSize: "100% 100%",
+          boxShadow:"0px 4px 4px 0px #00000040",
+          border:"1px solid #d9d9d940",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           width: "327px",
@@ -118,6 +120,7 @@ const BluredQuestionBox: React.FC<BluredQuestionBoxProps> = ({
               sx={{
                 width: 32,
                 height: 32,
+                filter:"drop-shadow(0 0 4px rgba(0, 0, 0, 0.4))"
               }}
             />
           </IconButton>

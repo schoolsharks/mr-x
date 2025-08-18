@@ -66,6 +66,24 @@ const Registration2: React.FC = () => {
     return formatTime(totalGuessingTime);
   };
 
+
+  // Calculate number of correct guesses
+  const correctGuesses = gameData?.candidateResults?.filter(c => c.isCorrect).length || 0;
+
+  // Dynamic title and subtitle based on correct guesses
+  let resultTitle = "";
+  let resultSubtitle = "";
+  if (correctGuesses === 2) {
+    resultTitle = "Double Win!";
+    resultSubtitle = "You cracked both speakers";
+  } else if (correctGuesses === 1) {
+    resultTitle = "Spot on!";
+    resultSubtitle = "You guessed one right.";
+  } else {
+    resultTitle = "Better luck";
+    resultSubtitle = "next time!";
+  }
+
   return (
     <>
       <Box
@@ -141,8 +159,8 @@ const Registration2: React.FC = () => {
               color: "#000000",
             }}
           >
-            Double Win! <br />
-            You cracked both speakers
+            {resultTitle} <br />
+            {resultSubtitle}
           </Typography>
 
           <Typography
