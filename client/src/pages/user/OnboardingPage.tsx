@@ -42,7 +42,7 @@ const OnboardingPage = () => {
     // Game over logic
     if (updatedData.strikes >= 3) {
       console.log("Game Over! All strikes used.");
-      // navigate("/user/game-over");
+      navigate("/user/game-over");
     }
   };
 

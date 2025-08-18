@@ -96,6 +96,7 @@ const GuessedRight: React.FC<GuessedRightProps> = ({
                 backgroundImage: `url(${candidate.Img})`,
                 // backgroundSize: "100% 100%",
                 backgroundPosition: "center",
+                filter: "drop-shadow(0 0 15px #000000)",
                 backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
                 // marginBottom: "20px",
@@ -333,7 +334,7 @@ const GuessedRight: React.FC<GuessedRightProps> = ({
               sx={{
                 fontSize: "13px",
                 fontWeight: 500,
-                color: "#000000",
+                color: "#981922",
                 fontFamily: "inter, sans-serif",
                 lineHeight: "16px",
                 letterSpacing: "0%",

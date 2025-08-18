@@ -152,14 +152,18 @@ export const timeoutCandidate = (candidateIndex: number): GameData => {
 export const completeGame = (): GameData => {
   const data = getGameData();
   
-  const totalTimeTaken = Math.round((Date.now() - data.startTime) / 1000);
+  // Calculate total time spent actually guessing (sum of individual candidate times)
+  const totalGuessingTime = data.candidateResults.reduce((total, candidate) => {
+    return total + (candidate.timeTaken || 0);
+  }, 0);
+  
   const completedCandidates = data.candidateResults.filter(c => c.isCorrect).length;
   const totalCandidates = data.candidateResults.length;
   const accuracy = totalCandidates > 0 ? (completedCandidates / totalCandidates) * 100 : 0;
   
   data.gameCompleted = true;
   data.finalScore = {
-    totalTimeTaken,
+    totalTimeTaken: totalGuessingTime, // Use actual guessing time instead of total elapsed time
     totalWrongGuesses: data.totalWrongGuesses.length,
     candidatesCompleted: completedCandidates,
     accuracy: Math.round(accuracy * 100) / 100, // Round to 2 decimal places

@@ -1,18 +1,71 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Button, Typography } from "@mui/material";
-import MeetTheSpeakers from "../../assets/MeetTheSpeakerBG.webp";
+import MeetTheSpeakers from "../../assets/MeetTheSpeakerBG1.webp";
 import Header from "../GuessTHePerson/Header";
 import SpeakerCard from "./SpeakerCard";
 import { SpeakerData } from "../../Data/SpeakerData";
-import Strikes from "../../assets/Strikes.png"; // Assuming you have an image for strikes
 import { scrollDown } from "../utility/ScrollDown";
 import Arrow from "../../assets/Arrow.webp"; // Assuming you have an arrow image for the button
 import FirstWingConnect from "../../assets/FirstWingConnect.webp";
 import QuestionBluredBox from "../../assets/QuestionBluredBox.png";
 import LastImg1 from "../../assets/image 60.webp";
 import LastImg2 from "../../assets/image 61.webp";
+import {
+  getGameData,
+  completeGame,
+  type GameData,
+} from "../../utils/gameStorage";
+import crossed from "../../assets/Crossed.png";
+import unfilledCross from "../../assets/UnfilledCross.png";
 
 const Registration2: React.FC = () => {
+  const [gameData, setGameData] = useState<GameData | null>(null);
+
+  useEffect(() => {
+    // Load game data when component mounts
+    const data = getGameData();
+    setGameData(data);
+
+    // Mark game as completed if not already completed
+    if (data && !data.gameCompleted) {
+      completeGame();
+    }
+  }, []);
+
+  // Helper function to format time from seconds to readable format
+  const formatTime = (seconds: number): string => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+
+    if (minutes === 0) {
+      return `${remainingSeconds} Second${remainingSeconds !== 1 ? "s" : ""}`;
+    } else if (remainingSeconds === 0) {
+      return `${minutes} Minute${minutes !== 1 ? "s" : ""}`;
+    } else {
+      return `${minutes}m ${remainingSeconds}s`;
+    }
+  };
+
+  // Get actual guessing time (sum of time spent on each candidate)
+  const getTimeTaken = (): string => {
+    if (!gameData) return "0 Seconds";
+
+    // Use finalScore.totalTimeTaken if available (after game completion)
+    if (gameData.finalScore?.totalTimeTaken !== undefined) {
+      return formatTime(gameData.finalScore.totalTimeTaken);
+    }
+
+    // Otherwise, calculate total time spent actually guessing (sum of individual candidate times)
+    const totalGuessingTime = gameData.candidateResults.reduce(
+      (total, candidate) => {
+        return total + (candidate.timeTaken || 0);
+      },
+      0
+    );
+
+    return formatTime(totalGuessingTime);
+  };
+
   return (
     <>
       <Box
@@ -54,7 +107,7 @@ const Registration2: React.FC = () => {
             // px: 2,
             display: "flex",
             flexDirection: "column",
-            gap: 1,
+            gap: 2.5,
           }}
         >
           {SpeakerData.map((speaker, index) => (
@@ -107,11 +160,21 @@ const Registration2: React.FC = () => {
           >
             No of Strikes
           </Typography>
-          <Box sx={{ mt: 2 }}>
+          <Box sx={{ mt: 2, display: "flex", alignItems: "center", gap: 1 }}>
             <img
-              src={Strikes}
-              alt="Strikes"
-              style={{ width: "111px", height: "25px" }}
+              src={(gameData?.strikes ?? 0) >= 1 ? crossed : unfilledCross}
+              alt="Strike 1"
+              style={{ height: "25px", width: "32px" }}
+            />
+            <img
+              src={(gameData?.strikes ?? 0) >= 2 ? crossed : unfilledCross}
+              alt="Strike 2"
+              style={{ height: "25px", width: "32px" }}
+            />
+            <img
+              src={(gameData?.strikes ?? 0) >= 3 ? crossed : unfilledCross}
+              alt="Strike 3"
+              style={{ height: "25px", width: "32px" }}
             />
           </Box>
 
@@ -144,7 +207,7 @@ const Registration2: React.FC = () => {
               mt: 1.5,
             }}
           >
-            3 Minutes
+            {getTimeTaken()}
           </Typography>
 
           <Typography
@@ -375,8 +438,9 @@ const Registration2: React.FC = () => {
                   ml: "12px",
                 }}
               >
-                <strong>‘Raise Capital Without Dilution’</strong> Join Recur Club’s spotlight
-                session on exclusive non-dilutive funding for startups.
+                <strong>‘Raise Capital Without Dilution’</strong> Join Recur
+                Club’s spotlight session on exclusive non-dilutive funding for
+                startups.
               </Typography>
 
               <img

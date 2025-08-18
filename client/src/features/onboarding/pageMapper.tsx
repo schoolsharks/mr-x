@@ -20,6 +20,10 @@ export const pageMapper = (
     }
   };
 
+  const handleGameOver = () => {
+    navigate("/user/game-over"); // Navigate to dedicated GameOver page
+  };
+
   if (page === 1) {
     return <Home handleNextPage={handleNextPage} />;
   }
@@ -34,6 +38,7 @@ export const pageMapper = (
         candidateIndex={candidateIndex}
         strikes={globalStrikes}
         onStrike={handleStrike}
+        onGameOver={handleGameOver}
       />
     );
   }

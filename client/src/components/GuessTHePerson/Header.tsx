@@ -9,12 +9,14 @@ interface HeaderProps {
   showTimer?: boolean;
   showStrikes?: boolean;
   strikes?: number; // Current number of strikes (0-3)
+  onGameOver?: () => void; // Callback when game is over (for navigation)
 }
 
 const Header: React.FC<HeaderProps> = ({
   showTimer = true,
   showStrikes = true,
   strikes = 0,
+  onGameOver,
 }) => {
   const [timerTransform, setTimerTransform] = useState(0);
 
@@ -25,6 +27,13 @@ const Header: React.FC<HeaderProps> = ({
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Check if game is over (all strikes crossed) and navigate
+  useEffect(() => {
+    if (strikes >= 3 && onGameOver) {
+      onGameOver(); // Navigate to GameOver component
+    }
+  }, [strikes, onGameOver]);
 
   return (
     <Box sx={{ overflow: "hidden" }}>

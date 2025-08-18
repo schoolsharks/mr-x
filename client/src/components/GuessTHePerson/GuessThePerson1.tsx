@@ -22,6 +22,7 @@ type GuessThePerson1Props = {
   candidateIndex?: number;
   strikes: number;
   onStrike: () => void;
+  onGameOver?: () => void; // Add onGameOver callback
 };
 
 function GuessThePerson1({
@@ -29,6 +30,7 @@ function GuessThePerson1({
   candidateIndex = 0,
   strikes,
   onStrike,
+  onGameOver,
 }: GuessThePerson1Props) {
   // Game state
   const [showCandidateImage, setShowCandidateImage] = useState(false);
@@ -126,7 +128,7 @@ function GuessThePerson1({
         }}
       >
         <Box>
-          <Header strikes={strikes} />
+          <Header strikes={strikes} onGameOver={onGameOver} />
         </Box>
 
         {/* Main Content Container */}
@@ -298,7 +300,7 @@ function GuessThePerson1({
               sx={{
                 fontSize: "13px",
                 fontWeight: 500,
-                color: "#000000",
+                color: "#981922",
                 fontFamily: "inter, sans-serif",
                 lineHeight: "16px",
                 letterSpacing: "0%",

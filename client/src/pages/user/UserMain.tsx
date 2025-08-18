@@ -2,6 +2,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import AnimatedPage from "../../components/layout/AnimatedPage";
 import OnboardingPage from "./OnboardingPage";
 import RegistrationPage from "./RegistrationPage";
+import GameOverPage from "./GameOverPage";
 import ScrollToTop from "../../components/utility/ScrollToTop";
 import { AnimatePresence } from "framer-motion";
 
@@ -26,6 +27,14 @@ const UserMain = () => {
             element={
               <AnimatedPage>
                 <RegistrationPage />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/game-over"
+            element={
+              <AnimatedPage>
+                <GameOverPage />
               </AnimatedPage>
             }
           />
