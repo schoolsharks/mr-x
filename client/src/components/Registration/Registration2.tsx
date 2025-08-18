@@ -335,7 +335,7 @@ const Registration2: React.FC = () => {
                 sx={{
                   fontFamily: "Inter",
                   fontWeight: 500,
-                  fontSize: "20px",
+                  fontSize: "14px",
                   lineHeight: "100%",
                   textAlign: "left",
                   letterSpacing: 0,
@@ -365,7 +365,7 @@ const Registration2: React.FC = () => {
                 sx={{
                   fontFamily: "Inter",
                   fontWeight: 500,
-                  fontSize: "20px",
+                  fontSize: "14px",
                   lineHeight: "100%",
                   textAlign: "left",
                   letterSpacing: 0,

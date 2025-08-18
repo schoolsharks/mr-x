@@ -111,12 +111,14 @@ const GuessedRight: React.FC<GuessedRightProps> = ({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              boxShadow: "0px 4px 4px 0px #00000040",
+
               mb: "30px",
             }}
           >
             <Typography
               sx={{
-                fontSize: "24px",
+                fontSize: "30px",
                 fontWeight: 700,
                 color: "#000000",
                 textAlign: "center",

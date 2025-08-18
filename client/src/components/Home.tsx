@@ -257,7 +257,7 @@ function Home({ handleNextPage }: HomeProps) {
               pl: "10px",
             }}
           >
-            Spot the speaker using clues in 90 seconds
+            Spot the speaker <br /> using clues in <br /> 90 seconds
           </Typography>
 
           <Button
@@ -308,10 +308,11 @@ function Home({ handleNextPage }: HomeProps) {
               letterSpacing: "0%",
               verticalAlign: "middle",
               mt: "60px",
+              // maxWidth:"70%"
               //   pl: "10px",
             }}
           >
-            You have 3 Strikes. Guess right to win, Guess wrong & you’re out.
+            You have 3 Strikes.<br/> Guess right to win, <br/>Guess wrong & <br/>you’re out.
           </Typography>
 
           <Button
